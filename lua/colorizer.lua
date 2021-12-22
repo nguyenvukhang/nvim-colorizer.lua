@@ -583,7 +583,8 @@ local function setup(filetypes, user_default_options)
 			return
 		end
 		local options = FILETYPE_OPTIONS[filetype] or SETUP_SETTINGS.default_options
-		attach_to_buffer(nvim_get_current_buf(), options)
+    -- my only edit: don't attach to buffer upon setup
+		-- attach_to_buffer(nvim_get_current_buf(), options)
 	end
 	nvim.ex.augroup("ColorizerSetup")
 	nvim.ex.autocmd_()
